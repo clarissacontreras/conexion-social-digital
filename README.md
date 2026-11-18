@@ -8,9 +8,25 @@ A partir de los datos de la Encuesta Nacional de Bienestar Autorreportado (ENBIA
 
 ## Cómo reproducir
 
-El proyecto incluye el procesamiento y análisis de datos, así como visualizaciones interactivas desarrolladas en Tableau.
+El proyecto utiliza Python para procesar los microdatos de la ENBIARE 2021 y generar los resultados del análisis de correlación de Spearman. Las visualizaciones interactivas se desarrollaron en Tableau.
 
-Los pasos para reproducir el análisis, preparar los datos y consultar los resultados se documentarán conforme se desarrolle la estructura del repositorio.
+Para reproducir el análisis:
+
+1. Clonar este repositorio.
+2. Instalar las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Ejecutar el procesamiento:
+   ```bash
+   python src/analisis_spearman.py
+   ```
+
+Los resultados se guardan en `data/processed/`.
+
+Para consultar las visualizaciones, abrir el archivo `tableau/PIA_Conexion_social_digital.twbx` con Tableau Desktop.
+
+Los datos originales utilizados se encuentran en `data/raw/`.
 
 ## Datos
 
