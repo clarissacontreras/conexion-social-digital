@@ -1,0 +1,6 @@
+﻿plataforma,variable,total_observaciones,usuarios,porcentaje_pandas,porcentaje_tableau,coincide
+Facebook,PC2_1,31166,19121,61.352114,61.350000,True
+Twitter,PC2_2,31166,3024,9.702881,9.700000,True
+Instagram,PC2_3,31166,5258,16.870949,16.870000,True
+WhatsApp/Telegram,PC2_4,31166,23509,75.431560,75.430000,True
+TikTok,PC2_5,31166,3310,10.620548,10.620000,True

@@ -14,19 +14,48 @@ Para reproducir el análisis:
 
 1. Clonar este repositorio.
 2. Instalar las dependencias:
+
    ```bash
    pip install -r requirements.txt
    ```
-3. Ejecutar el procesamiento:
+
+3. Ejecutar el análisis de Spearman:
+
    ```bash
    python src/analisis_spearman.py
    ```
 
-Los resultados se guardan en `data/processed/`.
+4. Ejecutar la validación de las medidas de Tableau con pandas:
+
+   ```bash
+   python src/validacion_medidas_tableau.py
+   ```
+
+Los resultados del análisis de Spearman se guardan en `data/processed/`, mientras que los resultados de la validación se generan en `results/`.
 
 Para consultar las visualizaciones, abrir el archivo `tableau/PIA_Conexion_social_digital.twbx` con Tableau Desktop.
 
 Los datos originales utilizados se encuentran en `data/raw/`.
+
+## Validación de medidas con pandas
+
+Para verificar la consistencia de los indicadores de uso de plataformas digitales presentados en Tableau, se desarrolló un proceso de validación independiente utilizando Python y la biblioteca pandas.
+
+El proceso calcula el porcentaje de personas que reportaron utilizar cada plataforma al menos alguna vez, excluyendo las respuestas correspondientes a «Nunca» y los valores nulos. Posteriormente, compara los resultados obtenidos con los porcentajes presentados en Tableau.
+
+Se validaron cinco indicadores:
+
+| Plataforma | Porcentaje de uso |
+|---|---:|
+| Facebook | 61.35 % |
+| Twitter | 9.70 % |
+| Instagram | 16.87 % |
+| WhatsApp/Telegram | 75.43 % |
+| TikTok | 10.62 % |
+
+**Resultado:** las cinco medidas coincidieron con los valores mostrados en Tableau (5 de 5 medidas validadas).
+
+El código de validación se encuentra en `src/validacion_medidas_tableau.py`, y los resultados detallados se generan en `results/validacion_medidas_tableau.csv`.
 
 ## Datos
 
