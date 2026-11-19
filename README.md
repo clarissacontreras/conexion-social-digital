@@ -6,11 +6,12 @@ Este proyecto analiza la relación entre la conexión digital y la conexión hum
 
 A partir de los datos de la Encuesta Nacional de Bienestar Autorreportado (ENBIARE) 2021, se busca identificar patrones y diferencias entre grupos de población, así como explorar la posible relación entre la interacción digital y las experiencias de conexión social.
 
+
 ## Cómo reproducir
 
-El proyecto utiliza Python para procesar los microdatos de la ENBIARE 2021 y generar los resultados del análisis de correlación de Spearman. Las visualizaciones interactivas se desarrollaron en Tableau.
+El proyecto utiliza Python para procesar los microdatos de la ENBIARE 2021, generar archivos Parquet y calcular los resultados del análisis de correlación de Spearman. Las visualizaciones interactivas se desarrollaron en Tableau.
 
-Para reproducir el análisis:
+Para reproducir el proyecto:
 
 1. Clonar este repositorio.
 2. Instalar las dependencias:
@@ -19,19 +20,19 @@ Para reproducir el análisis:
    pip install -r requirements.txt
    ```
 
-3. Ejecutar el análisis de Spearman:
+3. Ejecutar el flujo completo de procesamiento y análisis con un solo comando:
 
    ```bash
-   python src/analisis_spearman.py
+   python src/ejecutar_pipeline.py
    ```
 
-4. Ejecutar la validación de las medidas de Tableau con pandas:
+El flujo ejecuta automáticamente las siguientes tareas:
 
-   ```bash
-   python src/validacion_medidas_tableau.py
-   ```
+- Convierte los archivos CSV originales en archivos Parquet con metadatos de procedencia.
+- Calcula la matriz y el resumen de correlaciones de Spearman.
+- Valida las cinco medidas de frecuencia de uso de plataformas digitales de Tableau mediante pandas.
 
-Los resultados del análisis de Spearman se guardan en `data/processed/`, mientras que los resultados de la validación se generan en `results/`.
+Los archivos Parquet y los resultados del análisis se guardan en `data/processed/`. Los resultados de la validación se generan en `results/`.
 
 Para consultar las visualizaciones, abrir el archivo `tableau/PIA_Conexion_social_digital.twbx` con Tableau Desktop.
 
@@ -76,4 +77,4 @@ Los datos se utilizarán con fines académicos y se dará el crédito correspond
 
 ## Estado del proyecto
 
-En desarrollo.
+Análisis y visualizaciones completados. Documentación y preparación de entrega en proceso.
