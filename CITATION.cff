@@ -5,7 +5,7 @@ authors:
     given-names: "Maria Clarissa"
 title: "Conexión social y digital en México"
 abstract: "Análisis de la relación entre conexión digital y conexión humana en México a partir de datos de la ENBIARE 2021."
-version: 0.1.0
+version: 1.0.0
 date-released: 2026-11-17
 license: MIT
 repository-code: "https://github.com/clarissacontreras/conexion-social-digital"
